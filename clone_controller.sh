@@ -15,22 +15,15 @@ if [ -z $2 ]; then
 else
 	echo "Passed 2nd check!"
 fi
-# Now we are checking to see if the housing directory exists
-echo "Checking to see if the directory exists!"
-if [ -d $2 ]; then
-	echo "Passed 3rd check!"
-else
-	echo "The target dir does not exist!"
-	exit -1
-fi
 
 folder_name=${1}$(date +"%Y-%m-%d@%T")
-mkdir ${2}'/'${folder_name}
+path_to_folder=${2}'/'${folder_name}
+mkdir path_to_folder
 
 if [ $1 == "web" ]; then
-	./.clone_github_repo_website.sh $2
+	./.clone_github_repo_website.sh $path_to_folder
 	exit 1
 else
-	./.clone_github_repo_server.sh $2
+	./.clone_github_repo_server.sh $path_to_folder
 	exit 1
 fi
