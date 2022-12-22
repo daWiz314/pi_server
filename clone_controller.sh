@@ -28,7 +28,7 @@ folder_name=${1}$(date +"%Y-%m-%d@%T")
 mkdir ${2}'/'${folder_name}
 
 if [ $1 == "web" ]; then
-#	./clone_github_repo_website.sh $2
+	./clone_github_repo_website.sh $2
 else
-#	./clone_github_repo_server.sh $2
+	./clone_github_repo_server.sh $2
 fi
