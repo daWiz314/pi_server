@@ -10,7 +10,7 @@ else
 		exit -1
 	else
 		echo "Moving target file(s)"
-		mv $1 ../server_scripts_prod/
+		cp $1 ../server_scripts_prod/
 		exit 1
 	fi
 fi
